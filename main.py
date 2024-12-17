@@ -21,12 +21,12 @@ screen = pygame.display.set_mode(WINDOW_SIZE)
 # Définition du titre de la fenêtre
 pygame.display.set_caption("Planning Poker")
 
-"""
-@brief Fonction principale exécutant l'application.
-@details Cette fonction gère le menu principal du jeu et capture les interruptions clavier (Ctrl+C).
-En cas de fermeture, Pygame est correctement quitté.
-"""
 def main():
+    """
+    @brief Fonction principale exécutant l'application.
+    @details Cette fonction gère le menu principal du jeu et capture les interruptions clavier (Ctrl+C).
+    En cas de fermeture, Pygame est correctement quitté.
+    """
     try:
         # Exécution du menu principal de l'application
         run_menu(screen)
