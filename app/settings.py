@@ -11,12 +11,12 @@ import pygame
 from app.game import run_game
 from app.utils import load_backlog, load_cards, Button
 
-"""
-@brief Fonction principale pour gérer les réglages avant de commencer la partie.
-@details Cette fonction permet de configurer les paramètres du jeu, notamment le backlog, les joueurs et la règle de calcul. Elle permet également de lancer la partie lorsque tous les paramètres sont définis.
-@param screen L'écran Pygame sur lequel afficher les réglages du jeu.
-"""
 def run_settings(screen):
+    """
+    @brief Fonction principale pour gérer les réglages avant de commencer la partie.
+    @details Cette fonction permet de configurer les paramètres du jeu, notamment le backlog, les joueurs et la règle de calcul. Elle permet également de lancer la partie lorsque tous les paramètres sont définis.
+    @param screen L'écran Pygame sur lequel afficher les réglages du jeu.
+    """
     backlog = {}
     players = []
     rule = "Unanimité"

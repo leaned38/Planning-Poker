@@ -9,16 +9,17 @@
 import pygame
 from app.utils import save_backlog, calculate_rule_result, Button
 
-"""
-@brief Fonction principale qui gère l'exécution du jeu de Planning Poker.
-@details Cette fonction initialise le jeu, affiche les cartes et permet aux joueurs de voter. 
-Elle gère également les événements liés à l'affichage des résultats et à la navigation entre les tâches.
-@param screen L'écran Pygame sur lequel afficher l'interface du jeu.
-@param backlog Liste des tâches à estimer.
-@param players Liste des joueurs participant au jeu.
-@param rule La règle utilisée pour calculer les résultats des votes.
-"""
+
 def run_game(screen, backlog, players, rule):
+    """
+    @brief Fonction principale qui gère l'exécution du jeu de Planning Poker.
+    @details Cette fonction initialise le jeu, affiche les cartes et permet aux joueurs de voter. 
+    Elle gère également les événements liés à l'affichage des résultats et à la navigation entre les tâches.
+    @param screen L'écran Pygame sur lequel afficher l'interface du jeu.
+    @param backlog Liste des tâches à estimer.
+    @param players Liste des joueurs participant au jeu.
+    @param rule La règle utilisée pour calculer les résultats des votes.
+    """
     pygame.init()
 
     # Polices basiques
@@ -34,9 +35,16 @@ def run_game(screen, backlog, players, rule):
     running = True
     show_pause_message = False
     screen_width, screen_height = screen.get_size()
+    button_color = (188, 108, 37)  # Marron
+    hover_color = (210, 140, 75)  #marron plus clair survol
 
-
-    # Charger les images des cartes
+    """
+    Charger les images des cartes
+    Charge les images représentant les cartes du Planning Poker.
+    Les cartes sont chargées depuis le répertoire "assets/cards/".
+    Chaque carte est ensuite affichée à une position spécifique à l'écran.
+    Charger les images des cartes
+    """
     card_values = ["0", "1", "2", "3", "5", "8", "13", "20", "40", "100", "cafe", "intero"]
     card_images = {value: pygame.image.load(f"assets/cards/{value}.png") for value in card_values}
 
@@ -65,8 +73,8 @@ def run_game(screen, backlog, players, rule):
     text_color = (221, 161, 94)   # Orange 
 
     # Création des boutons "Révéler les cartes" et "Suivant"
-    reveal_button = Button((screen_width - 300) // 2, 600, 300, 80, "Révéler les cartes")
-    next_button = Button(600, 700, 200, 50, "Suivant")
+    reveal_button = Button((screen_width - 300) // 2, 600, 300, 80, "Révéler les cartes", color=button_color, hover_color=hover_color)
+    next_button = Button(600, 700, 200, 50, "Suivant", color=button_color, hover_color=hover_color)
     all_voted = False
     cards_revealed = False
     show_pause_message = False
@@ -80,7 +88,7 @@ def run_game(screen, backlog, players, rule):
 
         # Affiche la tâche actuelle
         task = tasks[current_task_index]
-        task_text = text_font.render(f"Tâche: {task}", True, text_color)
+        task_text = text_font.render(f"{task}", True, text_color)
         screen.blit(task_text, (50, 100))
 
         # Affiche le joueur actuel
@@ -104,11 +112,6 @@ def run_game(screen, backlog, players, rule):
                 vote_text = text_font_itlq.render(f"{player}: {vote}", True, text_color)
                 screen.blit(vote_text, (50, 150 + i * 30))
             
-            
-        # for i, player in enumerate(players):
-        #     vote = votes.get(player, "Pas encore voté") if cards_revealed else "?"
-        #     vote_text = text_font_itlq.render(f"{player}: {vote}", True, text_color)
-        #     screen.blit(vote_text, (700, 350 + i * 30)) if cards_revealed else screen.blit(vote_text, (50, 150 + i * 30))
 
         # Affiche les boutons
         if all_voted and not cards_revealed:
@@ -125,11 +128,10 @@ def run_game(screen, backlog, players, rule):
         pygame.display.flip()
 
         # Gestion des événements
-                # Gestion des événements
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 # Sauvegarde le backlog avant la fermeture du jeu
-                save_backlog(backlog=backlog)
+                save_backlog("backlog_json/backlog_final.json",backlog)
                 running = False
 
             elif event.type == pygame.MOUSEBUTTONDOWN:
@@ -177,7 +179,7 @@ def run_game(screen, backlog, players, rule):
 
                         # Vérifie si toutes les tâches sont terminées
                         if current_task_index >= len(tasks):
-                            save_backlog(backlog=backlog)
+                            save_backlog("backlog_json/backlog_final.json",backlog)
                             running = False
 
             elif event.type == pygame.USEREVENT and show_pause_message:
@@ -186,7 +188,7 @@ def run_game(screen, backlog, players, rule):
 
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_ESCAPE:
-                    save_backlog(backlog=backlog)
+                    save_backlog("backlog_json/backlog_final.json",backlog)
                     running = False
 
         # Changer le curseur à chaque itération pour gérer le survol
@@ -198,11 +200,3 @@ def run_game(screen, backlog, players, rule):
                 pygame.mouse.set_cursor(pygame.SYSTEM_CURSOR_HAND)  # Change le curseur en main quand il survole une carte
                 break
     
-    
-    
-if __name__ == "__main__":
-    pygame.init()
-    screen = pygame.display.set_mode((1200, 800))
-    pygame.display.set_caption("Planning Poker")
-    run_game(screen, {"Tâche 1": None, "Tâche 2": None}, ["Alice", "Bob"], "Médiane")
-    pygame.quit()

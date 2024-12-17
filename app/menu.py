@@ -11,13 +11,14 @@ import pygame
 from app.settings import run_settings
 from app.utils import Button
 
-"""
-@brief Fonction principale du menu de l'application Planning Poker.
-@details Cette fonction gère l'affichage du menu principal, avec les options "Démarrer une partie" et "Quitter l'application".
-Elle attend l'interaction de l'utilisateur et lance l'action correspondante (démarrer le jeu ou quitter l'application).
-@param screen L'écran Pygame sur lequel afficher le menu.
-"""
+
 def run_menu(screen):
+    """
+    @brief Fonction principale du menu de l'application Planning Poker.
+    @details Cette fonction gère l'affichage du menu principal, avec les options "Démarrer une partie" et "Quitter l'application".
+    Elle attend l'interaction de l'utilisateur et lance l'action correspondante (démarrer le jeu ou quitter l'application).
+    @param screen L'écran Pygame sur lequel afficher le menu.
+    """
     running = True
     font = pygame.font.Font(None, 36)
     screen_width, screen_height = screen.get_size()
