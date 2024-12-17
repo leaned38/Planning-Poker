@@ -1,0 +1,76 @@
+\doxysection{Référence de l\textquotesingle{}espace de nommage utils}
+\hypertarget{namespaceutils}{}\label{namespaceutils}\index{utils@{utils}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classutils_1_1_button}{Button}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceutils_a7c7ace5116ebcea537966fbbae497a8f}{load\+\_\+backlog}} (filepath="{}backlog\+\_\+json/backlog\+\_\+exemple.\+json"{})
+\item 
+\mbox{\hyperlink{namespaceutils_a61aa44603ebab49460ff0970f8fc757e}{save\+\_\+backlog}} (file\+\_\+path, backlog)
+\item 
+\mbox{\hyperlink{namespaceutils_a561e7a9c53e6460f5de6fcac3ec65b80}{load\+\_\+cards}} (filepath)
+\item 
+\mbox{\hyperlink{namespaceutils_a9eeb0dc85eb57113b05f516749b9a363}{calculate\+\_\+rule\+\_\+result}} (votes, rule)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+\begin{DoxyVerb}@file utils.py
+@brief Contient des fonctions utilitaires pour charger et sauvegarder des données (backlog, cartes) et calculer les résultats des votes.
+@version 1.0
+@author ldebret & mblanchon
+@date 2024-12-08
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Documentation des fonctions}
+\Hypertarget{namespaceutils_a9eeb0dc85eb57113b05f516749b9a363}\index{utils@{utils}!calculate\_rule\_result@{calculate\_rule\_result}}
+\index{calculate\_rule\_result@{calculate\_rule\_result}!utils@{utils}}
+\doxysubsubsection{\texorpdfstring{calculate\_rule\_result()}{calculate\_rule\_result()}}
+{\footnotesize\ttfamily \label{namespaceutils_a9eeb0dc85eb57113b05f516749b9a363} 
+utils.\+calculate\+\_\+rule\+\_\+result (\begin{DoxyParamCaption}\item[{}]{votes}{, }\item[{}]{rule}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@brief Calcule le résultat des votes en fonction de la règle choisie.
+@details Cette fonction évalue les votes des joueurs selon une règle spécifiée ("Unanimité", "Médiane", "Moyenne") et renvoie le résultat.
+@param votes Un dictionnaire contenant les votes des joueurs, où la clé est le nom du joueur et la valeur est le vote (un entier ou une chaîne).
+@param rule La règle à appliquer pour calculer le résultat ("Unanimité", "Médiane", "Moyenne").
+@return Le résultat calculé en fonction de la règle. Si aucune règle ne correspond, retourne -1.
+\end{DoxyVerb}
+ \Hypertarget{namespaceutils_a7c7ace5116ebcea537966fbbae497a8f}\index{utils@{utils}!load\_backlog@{load\_backlog}}
+\index{load\_backlog@{load\_backlog}!utils@{utils}}
+\doxysubsubsection{\texorpdfstring{load\_backlog()}{load\_backlog()}}
+{\footnotesize\ttfamily \label{namespaceutils_a7c7ace5116ebcea537966fbbae497a8f} 
+utils.\+load\+\_\+backlog (\begin{DoxyParamCaption}\item[{}]{filepath}{ = {\ttfamily "{}backlog\+\_\+json/backlog\+\_\+exemple.json"{}}}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@brief Charge un backlog depuis un fichier JSON.
+@details Cette fonction tente de charger un fichier JSON contenant un backlog. Si le fichier n'est pas trouvé ou si une erreur de décodage se produit, un dictionnaire vide est retourné.
+@param filepath Le chemin d'accès au fichier JSON contenant le backlog (par défaut, "backlog_json/backlog_exemple.json").
+@return Un dictionnaire représentant le backlog chargé, ou un dictionnaire vide en cas d'erreur.
+\end{DoxyVerb}
+ \Hypertarget{namespaceutils_a561e7a9c53e6460f5de6fcac3ec65b80}\index{utils@{utils}!load\_cards@{load\_cards}}
+\index{load\_cards@{load\_cards}!utils@{utils}}
+\doxysubsubsection{\texorpdfstring{load\_cards()}{load\_cards()}}
+{\footnotesize\ttfamily \label{namespaceutils_a561e7a9c53e6460f5de6fcac3ec65b80} 
+utils.\+load\+\_\+cards (\begin{DoxyParamCaption}\item[{}]{filepath}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@brief Charge les cartes depuis un fichier JSON.
+@details Cette fonction tente de charger un fichier JSON contenant les cartes. Si le fichier est introuvable ou invalide, un jeu de cartes par défaut est retourné.
+@param filepath Le chemin d'accès du dossier contenant le fichier JSON des cartes.
+@return La liste des cartes, ou un jeu de cartes par défaut si le fichier est introuvable ou invalide.
+\end{DoxyVerb}
+ \Hypertarget{namespaceutils_a61aa44603ebab49460ff0970f8fc757e}\index{utils@{utils}!save\_backlog@{save\_backlog}}
+\index{save\_backlog@{save\_backlog}!utils@{utils}}
+\doxysubsubsection{\texorpdfstring{save\_backlog()}{save\_backlog()}}
+{\footnotesize\ttfamily \label{namespaceutils_a61aa44603ebab49460ff0970f8fc757e} 
+utils.\+save\+\_\+backlog (\begin{DoxyParamCaption}\item[{}]{file\+\_\+path}{, }\item[{}]{backlog}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@brief Sauvegarde un backlog dans un fichier JSON.
+@details Cette fonction prend un dictionnaire représentant un backlog et l'enregistre sous forme de chaîne JSON dans un fichier.
+@param file_path Le chemin d'accès du fichier où sauvegarder le backlog.
+@param backlog Le dictionnaire représentant le backlog à sauvegarder.
+\end{DoxyVerb}
+ 

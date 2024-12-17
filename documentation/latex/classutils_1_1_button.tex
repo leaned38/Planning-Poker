@@ -1,0 +1,85 @@
+\doxysection{Référence de la classe utils.\+Button}
+\hypertarget{classutils_1_1_button}{}\label{classutils_1_1_button}\index{utils.Button@{utils.Button}}
+\doxysubsubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classutils_1_1_button_a518e38ca88c04574c640d483e6a0b7b4}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, x, y, width, height, text, color=(0, 128, 0), hover\+\_\+color=(0, 255, 0), text\+\_\+color=(255, 255, 255))
+\item 
+\mbox{\hyperlink{classutils_1_1_button_a66aa7c5e41781671c838d8da7a215710}{draw}} (self, screen)
+\item 
+\mbox{\hyperlink{classutils_1_1_button_a0e549d5bfefda3bd2364f44855ac9cb9}{is\+\_\+clicked}} (self, event)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Attributs publics}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classutils_1_1_button_a70f02732f168582ffb622d041c585130}\label{classutils_1_1_button_a70f02732f168582ffb622d041c585130} 
+{\bfseries rect} = pygame.\+Rect(x, y, width, height)
+\item 
+\Hypertarget{classutils_1_1_button_a4a84870ab7d91878139d67d69b6ac846}\label{classutils_1_1_button_a4a84870ab7d91878139d67d69b6ac846} 
+{\bfseries text} = text
+\item 
+\Hypertarget{classutils_1_1_button_a7bf8c0f173aaa10cdcc0206560da3955}\label{classutils_1_1_button_a7bf8c0f173aaa10cdcc0206560da3955} 
+{\bfseries color} = color
+\item 
+\Hypertarget{classutils_1_1_button_aa8be08f3665731631664ff6aff23af3e}\label{classutils_1_1_button_aa8be08f3665731631664ff6aff23af3e} 
+{\bfseries hover\+\_\+color} = hover\+\_\+color
+\item 
+\Hypertarget{classutils_1_1_button_aca43deaf93345314e81875c2cca79fba}\label{classutils_1_1_button_aca43deaf93345314e81875c2cca79fba} 
+{\bfseries text\+\_\+color} = text\+\_\+color
+\item 
+\Hypertarget{classutils_1_1_button_ab841578e96876473086df7e12095242f}\label{classutils_1_1_button_ab841578e96876473086df7e12095242f} 
+{\bfseries font} = pygame.\+font.\+Font(None, 36)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+\begin{DoxyVerb}@class Button
+@brief Classe représentant un bouton dans l'interface utilisateur à afficher à l'écran.
+@details Cette classe gère l'affichage d'un bouton ainsi que les interactions de l'utilisateur (clics).
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Documentation des constructeurs et destructeur}
+\Hypertarget{classutils_1_1_button_a518e38ca88c04574c640d483e6a0b7b4}\index{utils.Button@{utils.Button}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!utils.Button@{utils.Button}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily \label{classutils_1_1_button_a518e38ca88c04574c640d483e6a0b7b4} 
+utils.\+Button.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{x}{, }\item[{}]{y}{, }\item[{}]{width}{, }\item[{}]{height}{, }\item[{}]{text}{, }\item[{}]{color}{ = {\ttfamily (0,~128,~0)}, }\item[{}]{hover\+\_\+color}{ = {\ttfamily (0,~255,~0)}, }\item[{}]{text\+\_\+color}{ = {\ttfamily (255,~255,~255)}}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@brief Initialise un bouton avec des propriétés de position, taille et texte.
+@param x La coordonnée x du coin supérieur gauche du bouton.
+@param y La coordonnée y du coin supérieur gauche du bouton.
+@param width La largeur du bouton.
+@param height La hauteur du bouton.
+@param text Le texte à afficher sur le bouton.
+@param color La couleur de base du bouton (par défaut, vert).
+@param hover_color La couleur du bouton lorsque la souris survole celui-ci (par défaut, vert clair).
+@param text_color La couleur du texte sur le bouton (par défaut, blanc).
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Documentation des fonctions membres}
+\Hypertarget{classutils_1_1_button_a66aa7c5e41781671c838d8da7a215710}\index{utils.Button@{utils.Button}!draw@{draw}}
+\index{draw@{draw}!utils.Button@{utils.Button}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily \label{classutils_1_1_button_a66aa7c5e41781671c838d8da7a215710} 
+utils.\+Button.\+draw (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{screen}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@brief Dessine le bouton à l'écran.
+@param screen L'écran Pygame sur lequel dessiner le bouton.
+\end{DoxyVerb}
+ \Hypertarget{classutils_1_1_button_a0e549d5bfefda3bd2364f44855ac9cb9}\index{utils.Button@{utils.Button}!is\_clicked@{is\_clicked}}
+\index{is\_clicked@{is\_clicked}!utils.Button@{utils.Button}}
+\doxysubsubsection{\texorpdfstring{is\_clicked()}{is\_clicked()}}
+{\footnotesize\ttfamily \label{classutils_1_1_button_a0e549d5bfefda3bd2364f44855ac9cb9} 
+utils.\+Button.\+is\+\_\+clicked (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{event}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@brief Vérifie si le bouton a été cliqué.
+@param event L'événement de la souris à analyser.
+@return True si le bouton a été cliqué, sinon False.
+\end{DoxyVerb}
+ 
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+app/utils.\+py\end{DoxyCompactItemize}
